@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListadoService } from '../services/listado.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista',
@@ -11,7 +12,8 @@ export class ListaPage implements OnInit {
   private offset: number = 0;
   private limit: number = 20;
   constructor(
-    private listado: ListadoService
+    private listado: ListadoService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -28,4 +30,11 @@ export class ListaPage implements OnInit {
     });
   }
 
+  navega(i, poke){
+    this.router.navigateByUrl(`/tabs/estadisticas/${i + 1}/${poke.name}`);
+  }
+
+  favorite(poke, i){
+
+  }
 }

@@ -26,7 +26,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'estadisticas',
+        path: 'estadisticas/:id/:name',
         children: [
           {
             path: '',

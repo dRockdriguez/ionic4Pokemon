@@ -1,9 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>estadisticas</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon (click)="atras()" slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>{{ nombrePoke | titlecase }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 
+  <ion-card>
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{idPoke}}.png">
+    <ion-card-header>
+      <ion-card-title>{{ nombrePoke | titlecase }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Altura: {{ data?.height }}</p>
+      <p>Peso: {{ data?.weight }}</p>
+      <p *ngFor="let tipo of data?.types; let i = index">Tipo {{i + 1 }} : {{ tipo.type.name }}</p>
+      <p>Nº Pokédex: {{ idPoke }}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
