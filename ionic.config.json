@@ -1,5 +1,7 @@
 {
   "name": "projectAPI",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
