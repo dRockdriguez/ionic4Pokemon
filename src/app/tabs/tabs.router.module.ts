@@ -35,6 +35,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'estadisticasFav/:id/:name',
+        children: [
+          {
+            path: '',
+            loadChildren: '../estadisticas/estadisticas.module#EstadisticasPageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/lista',
         pathMatch: 'full'

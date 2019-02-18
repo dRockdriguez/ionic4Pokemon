@@ -35,6 +35,6 @@ export class ListaPage implements OnInit {
   }
 
   favorite(poke, i){
-
+    this.listado.favorite(poke, i);
   }
 }

@@ -1,9 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>favoritos</ion-title>
+    <ion-title>Favoritos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="4" *ngFor="let f of favs">
+        <ion-img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{f.id}}.png"></ion-img>
+        <ion-button size="small" (click)="navega(f)">Detalle</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

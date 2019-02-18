@@ -29,7 +29,11 @@ export class EstadisticasPage implements OnInit {
   }
 
   atras() {
-    this.router.navigateByUrl('');
+    if (this.router.url.includes('estadisticasFav')){
+      this.router.navigateByUrl('/tabs/favoritos');
+    } else {
+      this.router.navigateByUrl('');
+    }
   }
 
 }
