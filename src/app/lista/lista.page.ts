@@ -21,7 +21,7 @@ export class ListaPage implements OnInit {
   }
 
   loadData(infiniteScroll){
-    this.offset = this.limit + 1;
+    this.offset += this.limit;
     this.listado.getData(`https://pokeapi.co/api/v2/pokemon?offset=${this.offset}&limit=${this.limit}`).subscribe((data: any) => {
       this.pokemons.results = this.pokemons.results.concat(data.results);
       infiniteScroll.target.complete();
